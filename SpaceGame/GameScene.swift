@@ -17,11 +17,15 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         starfield = SKEmitterNode(fileNamed: "Starfield")
-        starfield.position = CGPoint(x: 0, y: frame.size.height)
+        starfield.position = CGPoint(x: self.frame.midX, y: self.frame.size.height)
         starfield.advanceSimulationTime(10)
         self.addChild(starfield)
         
         starfield.zPosition = -1
+        
+        player = SKSpriteNode(imageNamed: "shuttle")
+        player.position = CGPoint(x: self.frame.size.width / 2, y: player.size.height / 2 + 20)
+        self.addChild(player)
         
     }
     
